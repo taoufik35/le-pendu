@@ -1,10 +1,7 @@
 alert("Bonjour et Bienvenue au jeu du pendu");
-
-var motATouver = ["cour","cheval","pierre", "centre"];
-var lettre = [
-    ["c","o","u","r" ]
-    ["c","h","e","v","a","l"],
-    ["p","i","e","r","r","e"],
-    ["c","e","n","t","r","e"]
-];
+//--------------------Variable global--------------------------------
+let vocabulaire = ["php","javascript","json", "*objet"];
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let essais = 7;
+let lettre_Restantes = 'abcdefghijklmnopqrstuvwxyz';
 
