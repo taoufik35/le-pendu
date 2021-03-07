@@ -12,7 +12,7 @@ let nb_essais_restans;
 let jeu_en_cours;
 let victoire;
 let affichage;
-let lettre_joouee;
+let lettre_jouee;
 
 //------------------------LES FONCTIONS-------------------------------
 //========================Début de partie=============================
@@ -66,14 +66,52 @@ function affiche_mot (mot){
 
 
 
-function actualise_lettre(lettre_joouee){
+function actualise_lettre(lettre_jouee){
 
     var chaine = "";
     for(i = 0; i < lettre_Restantes;i++){
-        if (lettre_joouee != lettre_Restantes[i]){
+        if (lettre_jouee != lettre_Restantes[i]){
             chaine+= lettre_Restantes[i];
         }
     }
 
     return chaine
 }
+
+//fonction qui teste si le joueur a reussi à découvrir le mot
+
+function test_victoire(mot_a_deviner,affichage){
+
+    var result = false;
+    if (affichage == mot_a_deviner){
+        result= true
+    }
+    return result;
+}
+
+// choix du joueur a saisir
+
+function saisie_lettre(){
+    var lettre = prompt("saisissez une lettre".toLocaleLowerCase());
+
+    return lettre;
+
+}
+// fonction pour continuer a jouer 
+
+function continuer_jeu(){
+    var result;
+    if(victoire){
+        result = false;
+    }
+        else if (nb_essais_restans == 0){
+            result = false;
+        }
+        else{
+            result = true;
+        }
+        return result;
+        
+}
+
+
