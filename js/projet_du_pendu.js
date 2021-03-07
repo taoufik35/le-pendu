@@ -34,8 +34,7 @@ function compare (lettre, mot){
     var sortie;
     for(i = 0 ; i < mot.length;i++){
         if(mot[i]==lettre){
-            sortie=true;
-            break;
+            sortie = true;
         
         }
         else {
@@ -62,7 +61,10 @@ afichage = mot_a_afficher(mot_a_deviner,lettre_Restantes);
 
 function affiche_mot (mot){
     alert(mot);
-}//on affiche le mot
+
+}
+
+//on affiche le mot
 
 
 
@@ -92,7 +94,7 @@ function test_victoire(mot_a_deviner,affichage){
 // choix du joueur a saisir
 
 function saisie_lettre(){
-    var lettre = prompt("saisissez une lettre".toLocaleLowerCase());
+    var lettre = prompt("saisissez une lettre".toLowerCase());
 
     return lettre;
 
@@ -113,5 +115,27 @@ function continuer_jeu(){
         return result;
         
 }
+// boucle principal du jeu 
 
+while(jeu_en_cours){
+    affiche_mot (afichage);
+    lettre_jouee = saisie_lettre();
+    lettre_Restantes = actualise_lettre(lettre_jouee);
+
+        if(compare(lettre_jouee,mot_a_deviner)==false){
+            nb_essais_restans--;
+        }
+        affichage = mot_a_afficher(mot_a_deviner,lettre_Restantes);
+        victoire = test_victoire(mot_a_deviner,affichage);
+        jeu_en_cours = continuer_jeu();
+
+}
+
+if (victoire){
+    alert ("Victoire ! ");
+}
+else{
+    alert("Perdu ! ");
+}
+// fin de code
 
