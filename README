@@ -1,5 +1,8 @@
 DESCRIPTIF :
-
+ALPHABET:chaine de caracteres :les lettres que l'on utilise dans notre jeu
+VOCABULAIRE : liste de chaines de caracteres : stocke les mots qui peuvent être utilisés pour le jeu 
+ESSAIS: Numérique (entier) : nombre d'essais auxquel le joueur a le droit
+lettres_restantes : Tableau de caractére Les lettres qui sont encore disponibles au joueur
 
 
 
