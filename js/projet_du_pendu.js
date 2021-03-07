@@ -3,7 +3,7 @@ alert("Bonjour et Bienvenue au jeu du pendu");
 let vocabulaire = ["php","javascript","json", "objet"];
 let alphabet = "abcdefghijklmnopqrstuvwxyz";
 let essais = 7;
-let lettre_Restantes = 'abcdefghijklmnopqrstuvwxyz';
+let lettre_Restantes = "abcdefghijklmnopqrstuvwxyz";
 
 //--------------------Autres variable---------------------------------
 
@@ -22,8 +22,8 @@ nb_essais_restans = essais;
 lettre_Restantes = alphabet;
 
 function choix_du_mot(){
-    let tab = vocabulaire.length;
-    let nombre = Math.random() * (tab);
+    var tab = vocabulaire.length-1;
+    var nombre = Math.random() * (tab);
     nombre = Math.round(nombre);
     mot_a_deviner = vocabulaire[nombre];
  
@@ -35,7 +35,7 @@ function compare (lettre, mot){
     for(i = 0 ; i < mot.length;i++){
         if(mot[i]==lettre){
             sortie = true;
-        
+            break;
         }
         else {
             sortie = false;
@@ -44,10 +44,12 @@ function compare (lettre, mot){
           return sortie;
 }
 
+
 function mot_a_afficher(mot,lettre_Restantes){
     var mot_final= "";
     for(var i = 0; i < mot.length; i++){
         if(compare(mot[i],lettre_Restantes)){
+
             mot_final+= "_";
         }
         else{
@@ -63,8 +65,8 @@ function affiche_mot (mot){
     alert(mot);
 
 }
-
 //on affiche le mot
+
 
 
 
